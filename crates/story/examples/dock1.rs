@@ -11,9 +11,9 @@ use serde::Deserialize;
 use std::{sync::Arc, time::Duration};
 use story::{
     AccordionStory, AppState, AppTitleBar, Assets, ButtonStory, CalendarStory, DropdownStory,
-    FormStory, IconStory, ImageStory, InputStory, LabelStory, ListStory, ModalStory, Open,
-    PopoverStory, ProgressStory, ResizableStory, ScrollableStory, SidebarStory, StoryContainer,
-    SwitchStory, TableStory, TooltipStory, WebViewStory,
+    IconStory, ImageStory, InputStory, LabelStory, ListStory, ModalStory, Open, PopoverStory,
+    ProgressStory, ResizableStory, ScrollableStory, StoryContainer, SwitchStory, TableStory,
+    TooltipStory, WebViewStory,
 };
 
 #[derive(Clone, PartialEq, Eq, Deserialize)]
@@ -31,9 +31,9 @@ const MAIN_DOCK_AREA: DockAreaTab = DockAreaTab {
 };
 
 #[cfg(debug_assertions)]
-const STATE_FILE: &str = "target/docks.json";
+const STATE_FILE: &str = "target/dock1.json";
 #[cfg(not(debug_assertions))]
-const STATE_FILE: &str = "docks.json";
+const STATE_FILE: &str = "dock1.json";
 
 pub fn init(cx: &mut App) {
     cx.on_action(|_action: &Open, _cx: &mut App| {});
@@ -346,23 +346,13 @@ impl StoryWorkspace {
             vec![DockItem::tabs(
                 vec![
                     Arc::new(StoryContainer::panel::<ButtonStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<InputStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<DropdownStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<LabelStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<ModalStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<PopoverStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<SwitchStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<ProgressStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<TableStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<ImageStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<IconStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<TooltipStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<CalendarStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<ResizableStory>(window, cx)),
                     Arc::new(StoryContainer::panel::<ScrollableStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<AccordionStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<SidebarStory>(window, cx)),
-                    Arc::new(StoryContainer::panel::<FormStory>(window, cx)),
                 ],
                 None,
                 &dock_area,
