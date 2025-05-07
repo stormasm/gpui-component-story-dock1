@@ -7,7 +7,8 @@ resolver = "2"
 [workspace.dependencies]
 gpui = { git = "https://github.com/huacnlee/zed.git", branch = "webview" }
 #gpui-component = { git = "https://github.com/longbridge/gpui-component.git" }
-gpui-component = { git = "https://github.com/stormasm/gpui-component-ui.git" }
+#gpui-component = { git = "https://github.com/stormasm/gpui-component-ui.git" }
+gpui-component = { path = "/Users/ma/j/tmp09/gpui-component-ui/crates/ui" }
 #gpui-component = { path = "crates/ui" }
 story = { path = "crates/story" }
 

@@ -2771,7 +2771,6 @@ dependencies = [
 [[package]]
 name = "gpui-component"
 version = "0.1.0"
-source = "git+https://github.com/stormasm/gpui-component-ui.git#551c3202cf65386a012d311793bb63eb8b4bdcf3"
 dependencies = [
  "anyhow",
  "chrono",
